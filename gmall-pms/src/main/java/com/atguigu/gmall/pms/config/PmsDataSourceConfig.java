@@ -1,5 +1,7 @@
 package com.atguigu.gmall.pms.config;
 
+import com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor;
+import com.baomidou.mybatisplus.extension.plugins.pagination.optimize.JsqlParserCountOptimize;
 import io.shardingjdbc.core.api.MasterSlaveDataSourceFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -21,6 +23,12 @@ public class PmsDataSourceConfig {
         File file = ResourceUtils.getFile("classpath:sharding-jdbc.yml");
         DataSource dataSource = MasterSlaveDataSourceFactory.createDataSource(file);
         return dataSource;
+    }
+
+    @Bean
+    public PaginationInterceptor paginationInterceptor() {
+        PaginationInterceptor paginationInterceptor = new PaginationInterceptor();
+        return paginationInterceptor;
     }
 }
 

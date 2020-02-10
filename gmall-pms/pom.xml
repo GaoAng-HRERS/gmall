@@ -37,12 +37,7 @@
             <scope>test</scope>
         </dependency>
 
-        <!--引入logback整合logstash的第三方jar包-->
-        <dependency>
-            <groupId>net.logstash.logback</groupId>
-            <artifactId>logstash-logback-encoder</artifactId>
-            <version>5.3</version>
-        </dependency>
+
     </dependencies>
 
     <build>
