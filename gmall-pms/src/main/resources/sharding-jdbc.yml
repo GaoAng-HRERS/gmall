@@ -1,12 +1,12 @@
 dataSources:
   db_master: !!com.zaxxer.hikari.HikariDataSource
     driverClassName: com.mysql.jdbc.Driver
-    jdbcUrl: jdbc:mysql://192.168.1.106:3307/gmall_pms?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    jdbcUrl: jdbc:mysql://192.168.192.128:3307/gmall_pms?useUnicode=true&characterEncoding=utf-8&useSSL=false
     username: root
     password: root
   db_slave: !!com.zaxxer.hikari.HikariDataSource
     driverClassName: com.mysql.jdbc.Driver
-    jdbcUrl: jdbc:mysql://192.168.1.106:3316/gmall_pms?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    jdbcUrl: jdbc:mysql://192.168.192.128:3316/gmall_pms?useUnicode=true&characterEncoding=utf-8&useSSL=false
     username: root
     password: root
 masterSlaveRule:

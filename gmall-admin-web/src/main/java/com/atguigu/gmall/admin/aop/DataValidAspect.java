@@ -38,22 +38,25 @@ public class DataValidAspect {
         try {
             Object[] args = point.getArgs();
             for (Object obj : args) {
-                BindingResult r = (BindingResult) obj;
-                if(r.getErrorCount()>0){
-                    //框架自动校验检测到错误
-                    return new CommonResult().validateFailed(r);
+                if(obj instanceof BindingResult){
+                    BindingResult r = (BindingResult) obj;
+                    if(r.getErrorCount()>0){
+                        //框架自动校验检测到错误
+                        return new CommonResult().validateFailed(r);
+                    }
                 }
+
             }
 
             //System.out.println("前置通知");
             proceed = point.proceed(point.getArgs());
             //System.out.println("返回通知");
-            log.debug("校验切面将目标方法方形...{}",proceed);
+            log.debug("校验切面将目标方法放行...{}",proceed);
         } catch (Throwable throwable) {
             throw new RuntimeException(throwable);
             //System.out.println("异常通知");
         }finally {
-            System.out.println("后置通知");
+            //System.out.println("后置通知");
         }
         return  proceed;
     }

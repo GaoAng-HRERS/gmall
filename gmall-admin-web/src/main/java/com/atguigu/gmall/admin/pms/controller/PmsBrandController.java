@@ -29,9 +29,9 @@ public class PmsBrandController {
     @ApiOperation(value = "获取全部品牌列表")
     @GetMapping(value = "/listAll")
     public Object getList() {
-
         //TODO 获取全部品牌列表  brandService.listAll()
-        return new CommonResult().success(null);
+        List<Brand> brands = brandService.listAll();
+        return new CommonResult().success(brands);
     }
 
     @ApiOperation(value = "添加品牌")

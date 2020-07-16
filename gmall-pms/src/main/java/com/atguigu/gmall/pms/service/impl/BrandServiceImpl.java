@@ -13,6 +13,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 
+import java.util.List;
+
 /**
  * <p>
  * 品牌表 服务实现类
@@ -38,6 +40,12 @@ public class BrandServiceImpl extends ServiceImpl<BrandMapper, Brand> implements
         IPage<Brand> brandIPage = brandMapper.selectPage(new Page<Brand>(pageNum.longValue(), pageSize.longValue()), queryWrapper);
 
         PageInfoVo pageInfoVo = new PageInfoVo(brandIPage.getTotal(),brandIPage.getPages(),pageSize.longValue(),brandIPage.getRecords(),brandIPage.getCurrent());
+        return pageInfoVo;
+    }
+
+    @Override
+    public List<Brand> listAll() {
+        //List<Brand> brands = brandMapper.selectList(null);
         return null;
     }
 
