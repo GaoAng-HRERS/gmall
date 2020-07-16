@@ -22,6 +22,10 @@ public class UmsDataSourceConfig {
         DataSource dataSource = MasterSlaveDataSourceFactory.createDataSource(file);
         return dataSource;
     }
+    
+    public void Test(){
+        System.out.print("git fetch");
+    }
 }
 
 
