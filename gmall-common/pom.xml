@@ -9,6 +9,8 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <!--所有工具类，公共依赖-->
+
+    <!--模拟覆盖代码-->
     <artifactId>gmall-common</artifactId>
 
     <dependencies>
